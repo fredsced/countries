@@ -18,14 +18,16 @@ function fetchCountries(apiURL) {
         .then(response => response.json())
         .then(data => {
             data.map(country => {
-                let tr = createNode('tr'),
+                const tr = createNode('tr'),
                     tdName = createNode('td'),
                     tdCap = createNode('td'),
                     tdPop = createNode('td'),
                     tdArea = createNode('td'),
                     tdDensity = createNode('td'),
                     tdBorders = createNode('td'),
-                    tdFlag = createNode('td');
+                    tdFlag = createNode('td'),
+                    flagImg = createNode('img');
+                
 
                 tdName.innerHTML = country.name;
                 tdCap.innerHTML = country.capital;
@@ -33,6 +35,9 @@ function fetchCountries(apiURL) {
                 tdArea.innerHTML = country.area ? new Intl.NumberFormat('en-US').format(country.area) : 'N/A';
                 tdDensity.innerHTML = country.area ? new Intl.NumberFormat('en-US', {maximumFractionDigits:3}).format(country.population / country.area) : 'N/A';
                 tdBorders.innerHTML = country.borders.length;
+                flagImg.src = country.flag;
+                append(tdFlag, flagImg);
+                
 
                 append(tr, tdName);
                 append(tr, tdCap);
@@ -40,6 +45,7 @@ function fetchCountries(apiURL) {
                 append(tr, tdArea);
                 append(tr, tdDensity);
                 append(tr, tdBorders);
+                append(tr, tdFlag);
                 append(content, tr);
 
 

@@ -29,3 +29,7 @@ tbody tr td:first-child{
     text-align: left;
     font-weight: bold;
 }
+tbody tr td:last-child img{
+    width:30px;
+    border-radius: 3px;
+}
