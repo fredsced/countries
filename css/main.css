@@ -1,18 +1,14 @@
 body{
     font-family:Arial, Helvetica, sans-serif;
 }
-h1{
-    
+h1{   
     color:gray;
     font-size: 20px;
 }
 #main{
     max-width: 900px;
     min-width: 300px;
-    margin: 40px  auto;
-    
-
-
+    margin: 40px  auto;    
 }
 #table-container{
     overflow-x: auto;
@@ -20,14 +16,12 @@ h1{
 table{
     width:100%;
     border: 1px solid rgb(38, 95, 114);
-    padding:0px;
-    
+    padding:0px; 
 }
 
 th,td{
     text-align: center;
-    padding:8px;
-    
+    padding:8px;   
 }
 th{
     height: 30px;
@@ -45,8 +39,6 @@ tbody tr td:first-child{
 }
 tbody tr td:last-child{
     background-color: snow;
-    vertical-align: baseline;
-   
 }
 tbody tr td:last-child img{
     width:40px;

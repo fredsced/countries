@@ -7,10 +7,6 @@ const countriesURL = 'https://restcountries.eu/rest/v2/regionalbloc/eu?fields=na
 function createNode(element) {
     return document.createElement(element);
 }
-function append(parent, el) {
-    return parent.appendChild(el);
-}
-
 
 function fetchCountries(apiURL) {
     const content = document.getElementById('content');
@@ -36,17 +32,11 @@ function fetchCountries(apiURL) {
                 tdDensity.innerHTML = country.area ? new Intl.NumberFormat('en-US', {maximumFractionDigits:3}).format(country.population / country.area) : 'N/A';
                 tdBorders.innerHTML = country.borders.length;
                 flagImg.src = country.flag;
-                append(tdFlag, flagImg);
+                tdFlag.append(flagImg);
                 
-
-                append(tr, tdName);
-                append(tr, tdCap);
-                append(tr, tdPop);
-                append(tr, tdArea);
-                append(tr, tdDensity);
-                append(tr, tdBorders);
-                append(tr, tdFlag);
-                append(content, tr);
+                tr.append(tdName, tdCap, tdPop, tdArea, tdDensity, tdBorders, tdFlag);
+                content.append(tr);
+                
 
 
             })
