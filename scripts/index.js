@@ -1,14 +1,14 @@
 
 
-// URL to obtain EU coutries with only the required fields
+// URL to obtain EU countries with only the required fields
 const countriesURL = 'https://restcountries.eu/rest/v2/regionalbloc/eu?fields=name;capital;population;area;flag;borders;'
 
 
 function createNode(element) {
     return document.createElement(element);
 }
-function append(parent, ...el) {
-    return parent.appendChild(...el);
+function append(parent, el) {
+    return parent.appendChild(el);
 }
 
 
@@ -29,9 +29,9 @@ function fetchCountries(apiURL) {
 
                 tdName.innerHTML = country.name;
                 tdCap.innerHTML = country.capital;
-                tdPop.innerHTML = country.population;
-                tdArea.innerHTML = country.area;
-                tdDensity.innerHTML = country.area / country.population
+                tdPop.innerHTML = new Intl.NumberFormat('en-US').format(country.population);
+                tdArea.innerHTML = country.area ? new Intl.NumberFormat('en-US').format(country.area) : 'N/A';
+                tdDensity.innerHTML = country.area ? new Intl.NumberFormat('en-US', {maximumFractionDigits:3}).format(country.population / country.area) : 'N/A';
                 tdBorders.innerHTML = country.borders.length;
 
                 append(tr, tdName);

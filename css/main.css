@@ -1,0 +1,31 @@
+body{
+    font-family:Arial, Helvetica, sans-serif;
+}
+h1{
+    
+    color:gray;
+    font-size: 20px;
+}
+table{
+    margin: auto;
+    border: 1px solid rgb(38, 95, 114);
+    max-width: 900px;
+    padding:0px;
+}
+
+th,td{
+    height: 30px;
+    text-align: center;
+    padding:8px;
+}
+th{
+    background-color: rgb(36, 93, 116);
+    color:snow;
+}
+td{
+    background-color: rgb(211, 216, 218);
+}
+tbody tr td:first-child{
+    text-align: left;
+    font-weight: bold;
+}
