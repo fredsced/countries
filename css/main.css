@@ -6,30 +6,49 @@ h1{
     color:gray;
     font-size: 20px;
 }
-table{
-    margin: auto;
-    border: 1px solid rgb(38, 95, 114);
+#main{
     max-width: 900px;
+    min-width: 300px;
+    margin: 40px  auto;
+    
+
+
+}
+#table-container{
+    overflow-x: auto;
+}
+table{
+    width:100%;
+    border: 1px solid rgb(38, 95, 114);
     padding:0px;
+    
 }
 
 th,td{
-    height: 30px;
     text-align: center;
     padding:8px;
+    
 }
 th{
+    height: 30px;
     background-color: rgb(36, 93, 116);
     color:snow;
 }
 td{
+    height: 25px;
     background-color: rgb(211, 216, 218);
 }
 tbody tr td:first-child{
     text-align: left;
     font-weight: bold;
+   
+}
+tbody tr td:last-child{
+    background-color: snow;
+    vertical-align: baseline;
+   
 }
 tbody tr td:last-child img{
-    width:30px;
+    width:40px;
     border-radius: 3px;
 }
