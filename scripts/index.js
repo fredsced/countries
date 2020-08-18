@@ -9,14 +9,15 @@ const map = document.getElementById('map');
 
 const content = document.getElementById('content');
 
+const formatNumberIntl = new Intl.NumberFormat('en-US');
+const formatNumberIntl3Decimals = new Intl.NumberFormat('en-US', {maximumFractionDigits: 3})
+
+
 function createNode(element) {
     return document.createElement(element);
 }
 
-const formatNumberIntl = new Intl.NumberFormat('en-US');
-const formatNumberIntl3Decimals = new Intl.NumberFormat('en-US', {maximumFractionDigits: 3})
-
-function populateCountries(country) {
+function populateTable(country) {
     const tr = createNode('tr'),
         tdName = createNode('td'),
         tdCap = createNode('td'),
@@ -52,7 +53,7 @@ function fetchCountries(apiURL) {
         .then(response => response.json())
         .then(data => {
             data.map(country => {
-                populateCountries(country);
+                populateTable(country);
 
             })
         })
