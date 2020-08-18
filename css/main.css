@@ -44,4 +44,5 @@ tbody tr td:last-child img{
     height:25px;
     max-width: 30px;
     border-radius: 3px;
+    cursor: pointer;
 }
