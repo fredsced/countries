@@ -10,6 +10,10 @@ function createNode(element) {
     return document.createElement(element);
 }
 
+function formatNumberEN(number) {
+    new Intl.NumberFormat('en-US').format(number)
+}
+
 function fetchCountries(apiURL) {
     const content = document.getElementById('content');
     fetch(apiURL)
