@@ -34,8 +34,8 @@ function fetchCountries(apiURL) {
                 tdBorders.innerHTML = country.borders.length;
                 flagImg.src = country.flag;
                 
-                flagImg.addEventListener("click", e => {
-                    const makeUrl = `${mapURL}?key=${APIKEY}&q=${country.name}`;
+                flagImg.addEventListener('click', e => {
+                    const makeUrl = `${mapURL}?key=${APIKEY}&q=${country.name} ${country.capital}`;
                     map.src = makeUrl;
                 })
                               
@@ -46,7 +46,7 @@ function fetchCountries(apiURL) {
 
             })
         })
-        .catch(error => console.log('error' + error))
+        .catch(error => alert('error : ' + error))
 
 }
 
